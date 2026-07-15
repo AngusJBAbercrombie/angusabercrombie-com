@@ -14,6 +14,7 @@
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'Inter', system-ui, sans-serif;
+  --font-hand:    'Caveat', cursive;
 
   --max-width: 1080px;
   --section-pad: 5rem 1.5rem;
@@ -42,24 +43,136 @@ a { text-decoration: none; }
   padding: 0 1.5rem;
 }
 
-/* === THANK YOU BANNER === */
-.thankyou-banner {
-  background: var(--sky);
-  padding: 0.75rem 1.5rem;
-}
-.thankyou-inner {
+/* === THANK YOU POPUP === */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(20, 10, 50, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
+  backdrop-filter: blur(3px);
 }
-.thankyou-text {
-  font-size: 0.95rem;
+.popup-overlay.hidden { display: none; }
+
+.popup-card {
+  background: #FFFDF7;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+}
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 0.85rem;
+  cursor: pointer;
   color: var(--purple-dark);
-  text-align: center;
-  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
 }
-.thankyou-text strong {
-  font-weight: 700;
+.popup-close:hover { background: var(--white); }
+
+.popup-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+.popup-photo {
+  overflow: hidden;
+  min-height: 400px;
+}
+.popup-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+.popup-note {
+  padding: 2.5rem 2.5rem 2rem;
+  overflow-y: auto;
+  background: #FFFDF7;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.note-line {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: #1A0F40;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.note-salutation {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.note-closing {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+.note-signature {
+  font-family: var(--font-hand);
+  font-size: 2.4rem;
+  color: var(--purple);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 1.75rem;
+}
+.popup-donate-btn {
+  display: inline-block;
+  background: var(--purple);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-btn);
+  transition: background var(--transition);
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+}
+.popup-donate-btn:hover { background: var(--purple-mid); }
+.note-dismiss-hint {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.popup-dismiss-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.82rem;
+  color: var(--sky);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.popup-dismiss-link:hover { color: var(--purple); }
+
+@media (max-width: 640px) {
+  .popup-inner { grid-template-columns: 1fr; }
+  .popup-photo { min-height: 200px; max-height: 220px; }
+  .popup-note { padding: 1.5rem; }
+  .note-line { font-size: 1.1rem; }
 }
 
 /* === HEADER === */
@@ -274,7 +387,7 @@ a { text-decoration: none; }
 /* === PHOTO BREAK === */
 .photo-break {
   position: relative;
-  height: 420px;
+  height: 560px;
   overflow: hidden;
 }
 .photo-break img {
