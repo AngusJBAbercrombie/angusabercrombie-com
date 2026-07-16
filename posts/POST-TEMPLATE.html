@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="POST TITLE HERE · Angus Abercrombie" />
+  <title>POST TITLE HERE · Angus Abercrombie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../updates.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">Angus Abercrombie</a>
+      <nav class="site-nav">
+        <a href="../updates.html" class="nav-active">Updates</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#priorities">Priorities</a>
+        <a href="../index.html#record">Record</a>
+        <a href="../index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- POST HERO -->
+  <!-- CATEGORY TAG: use one of:
+       tag-announcement  / data-category="announcement"
+       tag-press-release / data-category="press-release"
+       tag-town-meeting  / data-category="town-meeting"
+       tag-endorsement   / data-category="endorsement"  -->
+  <div class="post-page-hero">
+    <div class="container">
+      <a href="../updates.html" class="post-back-link">← Back to Updates</a>
+      <div class="post-page-meta">
+        <span class="post-tag tag-announcement">Announcement</span><!-- CHANGE TAG CLASS -->
+        <time class="post-date">MONTH DD, YYYY</time><!-- CHANGE DATE -->
+      </div>
+      <h1 class="post-page-title">POST TITLE HERE</h1><!-- CHANGE TITLE -->
+    </div>
+  </div>
+
+  <!-- POST BODY — write your content below -->
+  <article class="post-page-body">
+
+    <p>Opening paragraph here.</p>
+
+    <p>Second paragraph here.</p>
+
+    <!-- Optional pull quote: -->
+    <!-- <blockquote>A key quote or highlight from the post.</blockquote> -->
+
+    <!-- Optional subheading: -->
+    <!-- <h2>Section heading</h2> -->
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Paid for by the Committee to Elect Angus Abercrombie</p>
+      <p>79 Winn Street · Belmont, MA 02478 · <a href="mailto:info@angusabercrombie.com">info@angusabercrombie.com</a></p>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
+
+<!--
+===========================================
+HOW TO ADD A NEW POST
+===========================================
+
+1. COPY this file and rename it something descriptive
+   e.g. posts/rock-meadow-update.html
+
+2. EDIT the <title> and <meta name="description"> at the top
+
+3. CHANGE the tag class and date in the post hero
+
+4. CHANGE the <h1> title
+
+5. WRITE your content in <article class="post-page-body">
+   Use <p> for paragraphs, <h2> for section headings,
+   <blockquote> for pull quotes
+
+6. ADD a card for it in updates.html by copying one of the
+   existing <article class="post-card"> blocks and updating:
+   - data-category (must match the tag: announcement, press-release, town-meeting, endorsement)
+   - href (path to your new file)
+   - The tag class and label
+   - The date
+   - The title
+   - The excerpt (1-2 sentence summary)
+
+===========================================
+-->
