@@ -3,26 +3,26 @@
 
 const projects = [
   {
-    lat: 42.38785,
-    lng: -71.17230,
+    lat: 42.401031,
+    lng: -71.163409,
     title: "No Turn on Red Signage — Brighton St @ Cross St",
     description: "Drivers headed eastbound on Cross St were unable to see the No Turn on Red sign at this intersection. Angus worked with the Department of Public Works to have a new sign installed, making this intersection, a crucial walking route for students headed to Winn Brook Elementary School, safer."
   },
   {
-    lat: 42.38650,
-    lng: -71.17550,
+    lat: 42.402114,
+    lng: -71.164453,
     title: "Pothole Patching — Brighton St",
     description: "Residents in this neighborhood raised the issue of dangerous potholes. Angus made sure they got a response and escalated their concerns to get the most egregious holes patched within days."
   },
   {
-    lat: 42.38530,
-    lng: -71.17820,
+    lat: 42.396481,
+    lng: -71.169074,
     title: "Community Path & Pedestrian Tunnel — Alexander Ave",
     description: "Angus has spoken up and voted repeatedly to keep the community path on track for funding this year and construction complete by the end of 2030. The idea behind this project is older than he is, and this safe route from our neighborhood to the new Middle and High School is long overdue."
   },
   {
-    lat: 42.39560,
-    lng: -71.17690,
+    lat: 42.396655,
+    lng: -71.174877,
     title: "Belmont Center Overlay Zoning — Channing & Claflin",
     description: "This new zoning plan will allow modest, fiscally beneficial projects in Belmont Center, giving our neighborhood more options for where to eat and shop. Angus worked to ensure that this plan would enable developments that can bring down costs in our area and help shift tax burdens from our homeowners."
   }
@@ -45,7 +45,7 @@ const pinIcon = (color) => L.divIcon({
 
 // Initialise map centred on Precinct 8
 const map = L.map('precinct-map', {
-  center: [42.389, -71.175],
+  center: [42.3993, -71.1686],
   zoom: 15,
   scrollWheelZoom: false  // prevent accidental zoom when scrolling the page
 });
