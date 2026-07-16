@@ -55,8 +55,8 @@ const map = L.map('precinct-map', {
   zoomControl: true
 });
 
-// CartoDB Dark Matter tiles — no API key required
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+// CartoDB Dark Matter Lite tiles — no API key required
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
   subdomains: 'abcd',
   maxZoom: 20
