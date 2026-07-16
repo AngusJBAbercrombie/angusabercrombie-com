@@ -1,22 +1,25 @@
 // === THANK YOU POPUP ===
 const popup = document.getElementById('thankyouPopup');
-const closeBtn = document.getElementById('popupClose');
-const dismissBtn = document.getElementById('popupDismiss');
 
-function closePopup() {
-  popup.classList.add('hidden');
-  document.body.style.overflow = '';
+if (popup) {
+  const closeBtn = document.getElementById('popupClose');
+  const dismissBtn = document.getElementById('popupDismiss');
+
+  function closePopup() {
+    popup.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.body.style.overflow = 'hidden';
+  closeBtn.addEventListener('click', closePopup);
+  dismissBtn.addEventListener('click', closePopup);
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) closePopup();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePopup();
+  });
 }
-
-document.body.style.overflow = 'hidden';
-closeBtn.addEventListener('click', closePopup);
-dismissBtn.addEventListener('click', closePopup);
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) closePopup();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closePopup();
-});
 
 // === MOBILE MENU ===
 const hamburger = document.querySelector('.hamburger');
